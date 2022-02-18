@@ -15,7 +15,6 @@ bool checkPrime(uint64_t value) {
       break; 
       } 
    } 
-   } 
    return isPrime;
 }
 
@@ -47,5 +46,4 @@ uint64_t sumPrime(uint64_t hbound) {
         if (checkPrime(prime))
             sum += prime;
     }
-    return sum;
 }

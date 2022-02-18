@@ -22,7 +22,7 @@ bool checkPrime(uint64_t value) {
 uint64_t nPrime(uint64_t n) {
     int count = 0;
     int prime = 0;
-    while (1) {
+    while (true) {
         prime++;
         if (checkPrime(prime))
             count++;
@@ -33,17 +33,12 @@ uint64_t nPrime(uint64_t n) {
 }
 
 uint64_t nextPrime(uint64_t value) {
-    if (value <= 0) {
-        return 1; 
+    while (true) {
+        value++;
+        if (checkPrime(value))
+            return value;	
     }
-    while (1) {
-        if (checkPrime(++value)) {
-            return value;
-        } 
-        else {
-            continue;
-        }
-    }
+    return value;
 }
 
 uint64_t sumPrime(uint64_t hbound) {

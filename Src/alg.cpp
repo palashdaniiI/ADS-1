@@ -3,42 +3,45 @@
 #include <cmath>
 
 bool checkPrime(uint64_t value) {
-  if (value == 0 || value == 1)
+  if (value < 2) {
     return false;
-  for (int i = 2; i <= value / 2; ++i) { 
-    if (value % i == 0)
-      if (value != i)
-        return false; 
+  }
+  if (value == 2) {
+    return true;
+  }
+  for (int i = 2; i <= sqrt(value); i++) {
+    if (value % i == 0) {
+      return false;
+    }
   }
   return true;
 }
 
 uint64_t nPrime(uint64_t n) {
-  int prime = 0, count = 0;
-  while (true) {
-    prime++;
-    if (checkPrime(prime))
-      count++;
-    if (count == n)
-      return prime;
+  uint64_t count = 0;
+  for (int i = 2; ; i++) {
+    if (checkPrime(i)) {
+      count += 1;
+      if (count == n) {
+        return i;
+      }
+    }
   }
-  return count;
 }
 
 uint64_t nextPrime(uint64_t value) {
-  int prime = value+1;
-  while (true) {
-    if (checkPrime(prime))
-      return prime;
-    prime++;
+  for (int i = value + 1; ; i++) {
+    if (checkPrime(i)) {
+      return i;
+    }
   }
-  return prime;
 }
-
 uint64_t sumPrime(uint64_t hbound) {
-  uint64_t prime, sum = 0;
-  for (prime = 0; prime < hbound; prime++)
-    if (checkPrime(prime))
-      sum += prime;
+  uint64_t sum = 0;
+  for (int i = 0; i < hbound; i++) {
+    if (checkPrime(i)) {
+      sum += i;
+    }
+  }
   return sum;
 }

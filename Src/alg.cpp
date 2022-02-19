@@ -2,7 +2,6 @@
 #include <cstdint>
 #include "alg.h"
 
-
 bool checkPrime(uint64_t value) {
    bool isPrime = true;
    if (value == 0 || value == 1)
@@ -12,7 +11,7 @@ bool checkPrime(uint64_t value) {
            if (value != i)
                return false; 
    }
-   return isPrime;
+   return true;
 }
 
 uint64_t nPrime(uint64_t n) {

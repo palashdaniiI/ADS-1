@@ -41,10 +41,10 @@ uint64_t nextPrime(uint64_t value) {
 }
 
 uint64_t sumPrime(uint64_t hbound) {
-    int prime, sum = 0;
     uint64_t prime, sum = 0;
     for (prime = 0; prime < hbound; prime++) {
         if (checkPrime(prime))
             sum += prime;
     }
+    return sum;
 }

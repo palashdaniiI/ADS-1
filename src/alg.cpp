@@ -1,7 +1,6 @@
 #include <cstdint>
 #include "alg.h"
 
-
 bool checkPrime(uint64_t value) {
   bool isPrime = true;
   uint64_t del = value/2;

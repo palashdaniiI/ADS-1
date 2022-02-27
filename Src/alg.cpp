@@ -3,14 +3,14 @@
 #include "alg.h"
 
 
-bool checkPrime(uint64_t value){
+bool checkPrime(uint64_t value) {
   bool isPrime = true;
   uint64_t del = sqrt(value);
-  if ((value % 2 == 0 && value != 2) || value < 2) 
- isPrime = false;
+  if ((value % 2 == 0 && value != 2) || value < 2)
+    isPrime = false;
   for (uint64_t prime = 2 ; prime <= del ; prime++) {
     if (value % prime == 0) {
- isPrime = false;
+      isPrime = false;
       break;
     }
   }
@@ -34,7 +34,7 @@ uint64_t nextPrime(uint64_t value) {
   uint64_t count = 0;
   for (uint64_t prime = value + 1 ; prime <= ULONG_MAX ; prime++) {
     if (checkPrime(prime)) {
- count = prime;
+      count = prime;
       break;
     }
   }
